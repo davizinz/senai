@@ -1,0 +1,241 @@
+int a = 0;
+Console.WriteLine("Digite um valor");
+a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine($"O valor da variavel é: {a}");
+
+
+int a = 0;
+Console.WriteLine("Digite sua idade");
+a = Convert.ToInt32(Console.ReadLine());
+if (a >= 18)
+{
+    Console.WriteLine("sim, você pode adquirir o livro");
+}
+else 
+{
+    Console.WriteLine("não, você não pode adquirir o livro");
+}
+
+
+int a = 0;
+int b = 0;
+Console.WriteLine("Digite um valor");
+a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Digite mais um valor");
+b = Convert.ToInt32(Console.ReadLine());
+if (a == b)
+{
+    Console.WriteLine($"os valores {a} e {b} são iguais!");
+}
+else if (a > b)
+{
+    Console.WriteLine($"Os valores digitados são {a} , {b}, e o valor {a} é o maior");
+}
+else    
+{
+    Console.WriteLine($"Os valores digitados são {a} , {b}, e o valor {b} é o maior");
+}
+
+
+int a = 0;
+int b = 0;
+int c = 0;
+Console.WriteLine("Digite um valor");
+a = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Digite mais um valor");
+b = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("digite um último valor");
+c = Convert.ToInt32(Console.ReadLine());
+if (a == b || a == c)
+{
+    Console.WriteLine($"os valores {a} e {b} são iguais!");
+}
+else if (a > b && a > c)
+{
+    Console.WriteLine($"Os valores digitados são {a}, {b} e {c}, e o valor {a} é o maior");
+}
+else if (b > a && b > c)
+{
+    Console.WriteLine($"Os valores digitados são {a}, {b} e {c}, e o valor {b} é o maior");
+}
+else if (a == b && a == c)
+{
+    Console.WriteLine($"Os valores digitados são {a}, {b} e {c}, e o valor {c} é o maior");
+}
+else
+{
+    Console.WriteLine($"Os valores digitados são {a}, {b} e {c}, e o valor {c} é o maior");
+}
+
+
+&& and=e
+|| or=ou
+! not=não
+
+switch...case: compara valores  
+
+int x = 0;
+Console.WriteLine("digite um numero");
+x = Convert.ToInt32(Console.ReadLine());    
+switch (x)
+{ 
+    case >100:
+        Console.WriteLine("o valor da variavel é maior que 100");
+        break;
+    case <100:
+        Console.WriteLine("o valor da variavel é menor que 100");
+        break;
+    default:
+        Console.WriteLine("o valor da variavel é desconhecido");
+        break;
+}
+
+
+using static System.Console;
+
+char op;
+double um, dois, resultado;
+
+Write("digite o 1° valor= ");
+um = Convert.ToDouble(Console.ReadLine());
+Write("digite o 2° valor= ");
+dois = Convert.ToDouble(Console.ReadLine());
+Write("escolha a opeeração (+, -, *, /):");
+op = (char)Read();
+
+switch (op)
+{
+    case '+':
+        resultado = um + dois;
+        WriteLine("{0}+{1} = {2}", um, dois, resultado);
+        break;
+    case '-':
+        resultado = um - dois;
+        WriteLine("{0}-{1} = {2}", um, dois, resultado);
+        break;
+    case '*':
+        resultado = um * dois;
+        WriteLine("{0}*{1} = {2}", um, dois, resultado);
+        break;
+    case '/':
+        resultado = um / dois;
+        WriteLine("{0}/{1} = {2}", um, dois, resultado);
+        break;
+    default:
+        WriteLine("operação invalida");
+        break;
+}
+
+
+laços de repetição
+-for((variavel=i) i=0, i<=10, i++)
+{
+	código
+}
+
+for (int i = 0; i <= 10; i++)
+{
+    int res = i * 20;
+    Console.WriteLine(res.ToString());
+}
+
+
+using static System.Console;
+
+int inicial, final;
+
+WriteLine ("digite o 1° valor: ");
+inicial= Convert.ToInt32(Console.ReadLine());
+WriteLine("digite o valor final: ");
+final = Convert.ToInt32(Console.ReadLine());
+
+for (int i = inicial; i <= final; i++)
+{
+  
+   WriteLine($"intervalo: {i}");
+}
+
+
+using static System.Console;
+
+int inicial;
+
+WriteLine ("digite o 1° valor: ");
+inicial= Convert.ToInt32(Console.ReadLine()); 
+
+for (int i = 1; i <= 10; i++)
+{
+    int res = i * inicial;
+    WriteLine($"{i} x {inicial} = {res}");
+}
+
+
+using System;
+using static System.Console;
+
+int inicial, final, num;
+
+WriteLine("digite o 1° valor: ");
+inicial = Convert.ToInt32(Console.ReadLine());
+WriteLine("digite o valor final: ");
+final = Convert.ToInt32(Console.ReadLine());
+
+for (int i = inicial; i <= final; i++)
+{
+
+    if (i % 2 == 0)
+    
+    WriteLine($"intervalo: {i}");
+}
+//números pares nos intervalos
+
+-while(expressão booleana)
+{
+   codigo 
+}
+
+using static System.Console;
+
+int contador = 2;
+while (contador !=10)
+{
+    WriteLine(contador.ToString());
+    contador++;
+}
+
+using static System.Console;
+
+int contador = 0;
+while (contador <150)
+{
+    WriteLine("o valor do contador é:"+contador.ToString());
+    contador+=10;
+}
+
+-foreach (percorrer listas //array)
+
+using static System.Console;
+
+string[] nomes = { "cleber", "carol", "denis", "roberto" };// uma array
+
+string[] nomes = { "cleber", "carol", "denis", "roberto" };
+foreach (string item in nomes)
+{
+    WriteLine("{0}", item);
+}
+
+
+
+ESTADOS:
+
+using System;
+using static System.Console;
+
+string[] nomes = {
+"Acre","Alagoas","Amapá","Amazonas" ,"Bahia","Ceará","Espírito Santo","Goiás","Maranhão","Mato Grosso","Mato Grosso do Sul","Minas Gerais","Pará","Paraíba","Paraná"
+,"Pernambuco","Piauí","Rio de Janeiro","Rio Grande do Norte","Rio Grande do Sul","Rondônia","Roraima","Santa Catarina","São Paulo","Sergipe","Tocantins","Distrito Federal"
+};
+foreach (string item in nomes)
+{
+    WriteLine("{0}", item);
+}

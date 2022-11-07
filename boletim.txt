@@ -1,0 +1,25 @@
+BOLETIM:
+
+string nome;
+int n1, n2, n3, resultado;
+Console.WriteLine("Digite seu nome:");
+nome = Console.ReadLine();
+Console.WriteLine("Digite sua Primeira nota:");
+n1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Digite sua Segunda nota:");
+n2 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Digite sua Terceira nota:");
+n3 = Convert.ToInt32(Console.ReadLine());
+resultado = (n1 + n2 + n3);
+if (resultado >= 180)
+{
+    Console.WriteLine("você está aprovado");
+}
+else if (resultado <= 180)
+{
+    Console.WriteLine("você está reprovado");
+}
+else
+{
+    Console.WriteLine($"{nome} você está reprovado");
+}

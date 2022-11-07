@@ -1,0 +1,47 @@
+using static System.Console;
+
+string[] carros = { "volvo", "peugeot", "nissan", "chevrolet"};
+WriteLine(carros[0]);
+carros[0] = "opel";
+WriteLine();
+WriteLine("o tamanho do array é:"+ carros.Length);
+WriteLine();
+Array.Sort(carros);
+foreach (string c in carros)
+{
+    WriteLine(c);
+}
+WriteLine();
+string novocarro;
+WriteLine("digite uma marca de carro:");
+novocarro = ReadLine();
+List<string> novocarros = new List<string>(carros.ToList());
+novocarros.Add(novocarro);
+carros = novocarros.ToArray();
+foreach (var item in carros)
+{
+    WriteLine(item);
+}
+
+
+
+using System.Xml.Schema;
+using static System.Console;
+
+int[] números = new int[5];
+
+WriteLine("digite 5 números:");
+WriteLine("pressione ENTER a cada número");
+
+Array.Sort(números);
+for (int n = 0; n < números.Length; n++)
+{
+    números[n] = Convert.ToInt32(ReadLine());
+}
+Clear();
+WriteLine("-------------------------------");
+WriteLine("estes são os números que você digitou:");
+for (int i = 0; i < números.Length; i++)
+{
+    WriteLine(números[i]);
+}

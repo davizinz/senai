@@ -1,0 +1,50 @@
+CARDÁPIO
+
+double pedido, quantos, resultado;
+Console.WriteLine("Faça seu Pedido: cachorro quente 100, bauru simples101, bauru com ovo102, hamburguer103, cheeseburguer104 e refrigerante105 ");
+pedido = Convert.ToDouble(Console.ReadLine());
+
+switch (pedido)
+{
+    case 100:
+        Console.WriteLine("quantos cachorro quente você deseja??");
+        quantos = Convert.ToDouble(Console.ReadLine());
+        resultado = quantos * 1.70;
+        Console.WriteLine($"você pediu {quantos} cachorro quente e o valor é ${resultado} ");
+        break;
+    case 101:
+        Console.WriteLine("quantos Bauru simples você deseja??");
+        quantos = Convert.ToDouble(Console.ReadLine());
+        resultado = quantos * 2.30;
+        Console.WriteLine($"você pediu {quantos} Bauru simples e o valor ${resultado} ");
+        break;
+    case 102:
+        Console.WriteLine("quantos Bauru com ovo você deseja??");
+        quantos = Convert.ToDouble(Console.ReadLine());
+        resultado = quantos * 2.60;
+        Console.WriteLine($"você pediu {quantos} Bauru simples e o valor é ${resultado} ");
+        break;
+    case 103:
+        Console.WriteLine("quantos Hamburguer você quer??");
+        quantos = Convert.ToDouble(Console.ReadLine());
+        resultado = quantos * 2.40;
+        Console.WriteLine($"você pediu {quantos} Hamburguer e o valor é ${resultado} ");
+        break;
+    case 104:
+        Console.WriteLine("quantos Cheeseburguer você quer??");
+        quantos = Convert.ToDouble(Console.ReadLine());
+        resultado = quantos * 2.50;
+        Console.WriteLine($"você pediu {quantos} Cheeseburguer e o valor é: ${resultado} ");
+        break;
+    case 105:
+        Console.WriteLine("quantos refrigerantes você quer??");
+        quantos = Convert.ToDouble(Console.ReadLine());
+        resultado = quantos * 1.00;
+        Console.WriteLine($"você pediu {quantos} Refrigerante e o valor é: ${resultado} ");
+        break;
+    default:
+        {
+            Console.WriteLine("este pedido não existe");
+        }
+        break;
+}

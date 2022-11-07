@@ -1,0 +1,93 @@
+//array, lista} N={1,2,3}
+//CRUD d=creat r=read u=update d=delete
+//como criar uma lista em C#?
+//é uma cadeia de caracteres que representa um tipo de valor e pode armazenar até 1 bilhão de caracteres e 2GB de memória
+using static System.Console;
+List<string> nome = new List<string>();
+nome.Add("josé");
+nome.Add("Maria");
+nome.Add("João");
+nome.Add("Ruth");
+foreach (var item in nome)
+{
+    WriteLine(item);
+}
+WriteLine();
+WriteLine(nome[2]);
+WriteLine();
+WriteLine("quantidade de registros:" + nome.Count);
+WriteLine("capacidade da lista:" + nome.Capacity);
+nome.Insert(2, "Nicolau");
+string[] novosnomes = { "novonome1", "novonome2", "novonome3" };
+nome.InsertRange(3, novosnomes);
+foreach (var item2 in nome)
+{
+    WriteLine(item2);
+}
+WriteLine();
+nome.Remove("novonome1");//nome de elemento
+nome.RemoveAt(4);//posiçao do elemento
+nome.RemoveRange(3, 2);//o primeiro é a posição e o segundo número é a posição dos elementos que eu quero remover 
+foreach (var item3 in nome)
+{
+    WriteLine(item3);
+}
+WriteLine();
+int idx = nome.IndexOf("Ruth");
+if(idx >= 0)
+{
+    WriteLine($"Item na lista nº: {idx}");
+}
+else
+{
+    WriteLine("Item não encontrado!");
+}
+WriteLine();
+nome.Add("Brian");
+nome.Sort();
+foreach(var item4 in nome)
+{
+    WriteLine(item4);
+}
+WriteLine();
+nome.Reverse();
+foreach(var item5 in nome)
+{
+    WriteLine(item5);
+}
+WriteLine();
+foreach (var item6 in nome)
+{
+    WriteLine(item6);
+}
+WriteLine();
+nome[3] = "josefa";
+foreach (var item7 in nome)
+{
+    WriteLine(item7);
+}
+WriteLine();
+
+
+
+using static System.Console;
+List<string> nome = new List<string>();
+for (int i = 0; i < 10; i ++)
+{
+    WriteLine($"digite o {i + 1}° nome:");
+    nome.Add(ReadLine());
+
+}
+Clear();
+WriteLine("========================");
+WriteLine("=     lista digitada   =");
+WriteLine("========================");
+WriteLine();
+foreach (string item in nome)
+{
+    WriteLine(item);
+}
+WriteLine();
+WriteLine("primeiro item:" + nome[0]);
+WriteLine("último item:" + nome[9]);
+ReadKey();

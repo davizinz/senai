@@ -1,0 +1,228 @@
+using static System.Console;
+using System;
+using System.Net.Http.Headers;
+
+namespace aula0111
+{
+    class MainClass
+    {
+        public static void PrintMenu(String[] options)
+        {
+            foreach (String option in options)
+            {
+                WriteLine(option);
+            }
+            WriteLine("escolha sua opção:");
+        }
+
+        public static void Main(String[] args)
+        {
+            WriteLine(">>>> MENU <<<<");
+            string[] options = {"1 - opção 1",
+                                "2 - opção 2",
+                                "3 - opção 3",
+                                "4 - sair",
+            };
+            int option = 0;
+            while (true)
+            {
+                PrintMenu(options);
+                try
+                {
+                    option = Convert.ToInt32(ReadLine());
+                }
+                catch (System.FormatException)
+                {
+                    WriteLine("por favor digite uma opção entre 1 e " + options.Length);
+                    continue; ;
+                }
+                switch (option)
+                {
+                    case 1:
+                        option1();
+                        break;
+                    case 2:
+                        option2();
+                        break;
+                    case 3:
+                        option3();
+                        break;
+                    case 4:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        WriteLine("por favor digite uma opção entre 1 e " + options.Length);
+                        break;
+                }
+            }
+        }
+        private static void option3()
+        {
+            WriteLine("executando a opção 3...");
+        }
+        private static void option1()
+        {
+            WriteLine("executando a opção 1...");
+        }
+        private static void option2()
+        {
+            WriteLine("executando a opção 2...");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using static System.Console;
+using System;
+using System.Net.Http.Headers;
+using System.ComponentModel;
+using System.Diagnostics.Tracing;
+
+namespace aula0111
+{
+    class MainClass
+    {
+        public static void PrintMenu(String[] options)
+        {
+            foreach (String option in options)
+            {
+                WriteLine(option);
+            }
+            WriteLine("escolha sua opção:");
+        }
+
+        public static void Main(String[] args)
+        {
+            WriteLine(">>>> CADASTRO DE PESSOAS <<<<");
+            string[] options = {"1 - cadastrar",
+                                "2 - editar",
+                                "3 - excluir",
+                                "4 - listar",
+                                "5 - sair"
+            };
+            int option = 0;
+            while (true)
+            {
+                PrintMenu(options);
+                try
+                {
+                    option = Convert.ToInt32(ReadLine());
+                }
+                catch (System.FormatException)
+                {
+                    WriteLine("por favor digite uma opção entre 1 e " + options.Length);
+                    continue; ;
+                }
+                switch (option)
+                {
+                    case 1:
+                        cadastrar();
+                        break;
+                    case 2:
+                        editar();
+                        break;
+                    case 3:
+                        excluir();
+                        break;
+                    case 4:
+                        listar();
+                        break;
+                    case 5:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        WriteLine("por favor digite uma opção entre 1 e " + options.Length);
+                        break;
+                }
+            }
+        }
+
+        static List<string> nomes = new List<string>();
+        static List<int> idades = new List<int>();
+        private static void cadastrar()
+        {
+            Clear();
+            WriteLine(">>>> cadastro de pessoa <<<<");
+            WriteLine();
+            WriteLine(" digite o nome da pessoa");
+            nomes.Add(ReadLine());
+            WriteLine("digite a idade da psssoa");
+            idades.Add(Convert.ToInt32(ReadLine()));
+            WriteLine();
+        }
+        private static void editar()
+        {
+            Clear();
+            WriteLine(">>>> edição de pessoa <<<<");
+            string nome = "";
+            WriteLine();
+            WriteLine("digite o nome da pessoa que voê deseja editar");
+            nome = ReadLine();
+            int index = nomes.IndexOf(nome);
+            if (index >= 0)
+            {
+                WriteLine();
+                WriteLine(">>>> registro que será editado <<<<");
+                WriteLine($"nome: {nomes[index]}");
+                WriteLine($"idade: {idades[index]}");
+                WriteLine();
+                WriteLine("digite um novo nome");
+                nomes[index] = ReadLine();
+                WriteLine("digite uma nova idade");
+                idades[index] = Convert.ToInt32(ReadLine());
+                WriteLine(">>>> registro atualizado com sucesso!");
+            }
+            else
+            {
+                WriteLine("!!!registro não encontrado!!!");
+            }
+        }
+        private static void excluir()
+        {
+            Clear();
+            WriteLine(">>>> exclusão de pessoa <<<<");
+            string nome = "";
+            WriteLine();
+            WriteLine("digite o nome da pessoa que voê deseja excluir");
+            nome = ReadLine();
+            int index = nomes.IndexOf(nome);
+            if (index >= 0)
+            {
+                WriteLine();
+                WriteLine(">>>> registro que será excluído <<<<");
+                WriteLine($"nome: {nomes[index]}");
+                WriteLine($"idade: {idades[index]}");
+                WriteLine();
+                nomes.RemoveAt(index);
+                idades.RemoveAt(index);
+                WriteLine(">>>> registro removido com sucesso! <<<<");
+            }
+            else
+            {
+                WriteLine("!!!registro não encontrado!!!");
+            }
+        }
+        private static void listar()
+        {
+            Clear();
+            WriteLine(">>>> listagem de pessoas ");
+            WriteLine();
+            int pos = 0;
+            foreach (var item in nomes)
+            {
+                WriteLine($"nome: {item} - idade: {idades[pos]}");
+                pos++;
+            }
+            WriteLine();
+        }
+    }
+}

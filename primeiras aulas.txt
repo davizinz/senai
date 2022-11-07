@@ -1,0 +1,68 @@
+//string: escrita, tudo que aparece na tela do computador, letras números e etc.
+//int: números inteiros, so recebe números 
+//double: guarda números reais 
+//if(instrução logica: da dois valores um verdaderio ou um falso)
+//{codigo}
+//eslse
+//{codigo}
+
+string nome = "davi";
+string cidade = "maringá";
+string email = "davijelu@gmail.com";
+Console.WriteLine("O seu nome é " + nome + ", a sua cidade é " + cidade + ", o seu e-mail é " + email);
+
+
+int n1 = 0;
+int n2 = 0;
+int soma = 0;
+Console.WriteLine("digite o N1");
+n1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("digite o n2");
+n2 = Convert.ToInt32(Console.ReadLine());
+soma = n1 + n2;
+Console.WriteLine(n1.ToString() + "+" + n2.ToString() + "=" + soma.ToString());
+
+
+double peso = 0;
+double altura = 0;
+double imc = 0;
+Console.WriteLine("digite o seu peso (kg)");
+peso = Convert.ToDouble(Console.ReadLine());
+Console.WriteLine("digite a sua altura (m)");
+altura = Convert.ToDouble(Console.ReadLine());
+imc = peso / (altura * altura);
+Console.WriteLine("resultado do seu imc: " + imc.ToString("n2"));
+
+
+int a = 3;
+if (a < 0)
+{
+    Console.WriteLine($"o número {a} é positivo");
+}
+else
+{
+    Console.WriteLine($"o número {a} não é negativo");
+}
+Console.ReadLine();
+
+
+
+int a = 10;
+if (a < 0)
+{
+    Console.WriteLine($"o número {a} é negativo!");
+}
+else
+{
+    if (a == 0)
+    {
+        Console.WriteLine($"o número {a} é igual a 0!");
+    }
+    else
+    {
+        Console.WriteLine($"o número {a} é positivo!");
+    }
+}
+Console.ReadLine();
+
+emersonb6@gmail.com 

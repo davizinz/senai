@@ -1,0 +1,480 @@
+// resolução dos exercicios de sala
+using static System.Console;// isso é uma biblioteca 
+
+
+//1
+int a, b, aux;
+a = 10;
+b = 20;
+WriteLine("o valor da variável A é {0}, e de B {1}", a, b);
+
+aux = a;
+a = b;
+b = aux;
+
+WriteLine("o valor da variável A é {0}, e de B {1}", a, b);
+
+
+//2
+double bas, altura, area;
+WriteLine("digite a base do retângulo");
+bas = Convert.ToDouble(Console.ReadLine());
+WriteLine("digite a altura do retângulo");
+altura = Convert.ToDouble(Console.ReadLine());
+area = bas * altura;
+WriteLine($"a área do retâmgulo é de {area}");
+
+
+
+
+//4
+int num;
+WriteLine("digite um número");
+num = Convert.ToInt32(Console.ReadLine());
+
+for (int i = 1; i <= num; i++)
+{
+	if (i % 2 == 0)
+	{
+		WriteLine($"número par: {i}");
+	}
+
+}
+WriteLine();
+for (int i = 1; i <= num; i++)
+{
+    if (i % 2 != 0)
+    {
+        WriteLine($"número ímpar: {i}");
+    }
+    
+}
+ReadKey();
+
+
+//5
+int n1, n2;
+WriteLine("digite o 1º valor");
+n1 = Convert.ToInt32(ReadLine());
+WriteLine("digite o 2º valor");
+n2 = Convert.ToInt32(ReadLine());
+
+if (n1 == n2)
+{
+    WriteLine("os números são iguais!!!");
+}
+else if (n1 >n2)
+{
+    WriteLine("o 1º valor é maior!!");
+}
+else
+{
+    WriteLine("o 2º valor é maior!!");
+}
+ReadKey();
+
+
+//6
+int num;
+WriteLine("digite 1 valor");
+num = Convert.ToInt32(ReadLine());
+
+if (num >= 0)
+{
+    WriteLine("o número digitado é positivo!");
+}
+else
+{
+    WriteLine("o número digitado é negativo");
+}
+ReadKey();
+
+
+//7
+double n1, n2, media;
+WriteLine("digite a primeira nota");
+n1 = Convert.ToDouble(ReadLine());
+WriteLine("digite a segunda nota");
+n2 = Convert.ToDouble(ReadLine());
+media = (n1 + n2) / 2;
+if (media == 10)
+{
+    WriteLine("aprovado com a media {0}", media);
+    ForegroundColor = ConsoleColor.Yellow;
+    WriteLine("aprovado com distinção");
+}
+else if (media >= 7)
+{
+    WriteLine("aprovado com média {0}", media);
+    ForegroundColor = ConsoleColor.Green;
+    WriteLine("aprovado");
+}
+else
+{
+    WriteLine("reprovado com média {0}", media);
+    ForegroundColor = ConsoleColor.Red;
+    WriteLine("reprovado");
+}
+    ReadKey();
+
+
+//8
+double p1, p2, p3;
+WriteLine("digite o valor do primeiro produto");
+p1 = Convert.ToDouble(ReadLine());
+WriteLine("digite o valor do segundo produto");
+p2 = Convert.ToDouble(ReadLine());
+WriteLine("digite o valor do terceiro produto");
+p3 = Convert.ToDouble(ReadLine());
+if (p1<p2 && p1<p3)
+{
+    ForegroundColor = ConsoleColor.Green;
+    WriteLine($"preço R$ {p1}, primeiro produto é mais barato");
+}
+else if (p2<p1 && p2<p3)
+{
+    ForegroundColor = ConsoleColor.Green;
+    WriteLine($"preço R$ {p2}, segundo produto é mais barato");
+}
+else
+{
+    ForegroundColor = ConsoleColor.Green;
+    WriteLine($"preço R$ {p3}, terceiro produto é mais barato");
+}
+ReadKey();
+
+
+//9
+using static System.Console;
+
+int perguntas;
+perguntas = 0;
+ConsoleKeyInfo key;
+
+WriteLine("Você telefonou para a vítima? (s/n)");
+key = ReadKey();
+if (key.Key == ConsoleKey.S)
+{
+   perguntas++;
+}
+WriteLine();
+WriteLine("Você estava no local do crime? (s/n)");
+key = ReadKey();
+if (key.Key == ConsoleKey.S)
+{
+    perguntas++;
+}
+WriteLine();
+WriteLine("Você mora perto da vítima? (s/n)");
+key = ReadKey();
+if (key.Key == ConsoleKey.S)
+{
+    perguntas++;
+}
+WriteLine();
+WriteLine("Você devia para a vítima? (s/n)");
+key = ReadKey();
+if (key.Key == ConsoleKey.S)
+{
+    perguntas++;
+}
+WriteLine();
+WriteLine("Você já trabalhou para a vítima? (s/n)");
+key = ReadKey();
+if (key.Key == ConsoleKey.S)
+{
+    perguntas++;
+}
+WriteLine();
+if (perguntas == 5)
+{
+    ForegroundColor = ConsoleColor.Red;
+    WriteLine("Supeito é ASSASSINO!!!");
+}
+else if (perguntas == 2)
+{
+    ForegroundColor = ConsoleColor.Red;
+    WriteLine("Supeito!!!");
+}
+else if (perguntas == 3 || perguntas == 4)
+{
+    ForegroundColor = ConsoleColor.Red;
+    WriteLine("Supeito é Cúmplice!!!");
+}
+else
+{
+    ForegroundColor = ConsoleColor.Green;
+    WriteLine("Supeito é Inocente!!!");
+}
+
+ReadKey();
+
+
+//10
+int idade;
+idade = 0;
+Console.WriteLine("digite sua idade");
+idade = Convert.ToInt32(ReadLine());
+if (idade >= 18 && idade <=67)
+{
+    WriteLine("você pode doar sangue");
+}
+else
+{
+    WriteLine("você não pode doar sangue");
+}
+ReadKey();
+
+
+//11
+
+double c, f;
+c = 0;
+f = 0;
+Console.WriteLine("digite a temperatura em farenheit");
+f = Convert.ToDouble(ReadLine());
+c = (f - 32) * 5 / 9;
+WriteLine("a temperatura em celsius é" + Math.Round(c, 2));
+ReadKey();
+
+
+//12
+int qtde;
+double macas, total;
+macas = 0;
+qtde = 0;
+WriteLine("quantas maçãs você deseja comprar?");
+qtde = Convert.ToInt32(ReadLine());
+if (qtde < 12)
+{
+    macas = 1.30;
+    total = macas * qtde;
+    WriteLine($"o total da compra foi R$" + Math.Round(total,2));
+}
+else
+{
+    macas = 1;
+    total = macas * qtde;
+    WriteLine($"o total da compra foi R$" + Math.Round(total, 2));
+}
+ReadKey();
+
+
+//13
+double l1, l2, l3;
+
+WriteLine("valor de l1?");
+l1 = Convert.ToDouble(ReadLine());
+WriteLine("valor de l2?");
+l2 = Convert.ToDouble(ReadLine());
+WriteLine("valor de l3?");
+l3 = Convert.ToDouble(ReadLine());
+if (l1 < l2+l3 && l2 < l1+l3 && l3 < l1+l2)
+{
+
+    WriteLine("é um triângulo");
+}
+else
+{
+    
+    WriteLine("não é um triângulo");
+}
+ReadKey();
+
+
+//14
+using static System.Console;
+
+int n1, n2;
+n1 = 0;
+n2 = 0;
+
+WriteLine("Digite um número");
+n1 = Convert.ToInt32(ReadLine());
+WriteLine("Digite um segundo número");
+n2 = Convert.ToInt32(ReadLine());
+
+if(n1 == n2)
+{
+    WriteLine();
+    WriteLine("Números iguais!!!");
+}
+else if(n1 > n2)
+{
+    WriteLine("O primeiro número, {0}, é maior que o segundo número {1}", n1, n2);
+}
+else
+{
+    WriteLine("O segundo número, {0}, é maior que o primeiro número {1}", n2, n1);
+}
+
+
+ReadKey();
+
+
+//15
+using static System.Console;
+
+double alcool, gasolina, litros, total, desconto, pl;
+alcool = 2.9;
+gasolina = 3.3;
+litros = 0;
+total = 0;
+desconto = 0;
+pl = 0;
+ConsoleKeyInfo key;
+
+WriteLine("Quantos litros você quer?");
+litros = Convert.ToDouble(ReadLine());
+WriteLine("Qual é o tipo de combústivel (A - Alcool / G - Gasolina)?");
+key = ReadKey();
+WriteLine();
+
+if (key.Key == ConsoleKey.A)
+{
+	if (litros <= 20)
+	{
+		desconto = 3.0 / 100;
+		pl = alcool - (desconto * alcool);
+		total = pl * litros;
+		WriteLine("Total R$ " + Math.Round(total, 2));
+	}
+	else
+	{
+        desconto = 5.0 / 100;
+        pl = alcool - (desconto * alcool);
+        total = pl * litros;
+        WriteLine("Total R$ " + Math.Round(total, 2));
+    }
+}
+
+if (key.Key == ConsoleKey.G)
+{
+    if (litros <= 20)
+    {
+        desconto = 4.0 / 100;
+        pl = gasolina - (desconto * gasolina);
+        total = pl * litros;
+        WriteLine("Total R$ " + Math.Round(total, 2));
+    }
+    else
+    {
+        desconto = 6.0 / 100;
+        pl = gasolina - (desconto * gasolina);
+        total = pl * litros;
+        WriteLine("Total R$ " + Math.Round(total, 2));
+    }
+}
+
+ReadKey();
+
+
+//16
+using static System.Console;
+
+int codigo, senha, cod, sen;
+codigo = 1234;
+senha = 9999;
+cod = 0;
+sen = 0;
+
+WriteLine("Digite o código para entrar");
+cod = Convert.ToInt32(ReadLine());
+WriteLine();
+if (cod == codigo)
+{
+    WriteLine("Digite a senha para verificação");
+    sen = Convert.ToInt32(ReadLine());
+    if (sen == senha)
+    {
+        ForegroundColor = ConsoleColor.Green;
+        WriteLine("Acesso permitido!!!!");
+    }
+    else
+    {
+        WriteLine("Senha incorreta!!!");
+    }
+}
+else
+{
+    ForegroundColor = ConsoleColor.Red;
+    WriteLine("Usuário inválido!!!!");
+}
+
+ReadKey();
+
+
+//17
+using static System.Console;
+
+int codigo, anonascimento, anoadmissao, idade, tt;
+codigo = 0;
+anonascimento = 0;
+anoadmissao = 0;
+idade = 0;
+tt = 0;
+
+WriteLine("Código do funcionário");
+codigo = Convert.ToInt32(Console.ReadLine());
+WriteLine("Digite o ano do seu nascimento");
+anonascimento = Convert.ToInt32(Console.ReadLine());
+WriteLine("Digite o ano da sua admissão na empresa");
+anoadmissao = Convert.ToInt32(Console.ReadLine());
+
+idade = DateTime.Today.Year - anonascimento;
+tt = DateTime.Today.Year - anoadmissao;
+if (idade >= 65 || tt >=30 || idade >=60 && tt >= 25)
+{
+    WriteLine("Funcionário com o código {0}, pode requerer a aposentadoria!!!", codigo);
+}
+else
+{
+    WriteLine("Funcionário com o código {0}, não pode requerer a aposentadoria!!!", codigo);
+}
+
+ReadKey();
+
+
+//18
+using static System.Console;
+
+int soma = 0;
+
+for (int i = 1; i <= 10; i++)
+{
+    WriteLine(i);
+    soma = soma + i;
+}
+WriteLine();
+WriteLine("A soma dos valores foi {0}", soma);
+
+ReadKey();
+
+
+//19
+int n = 1;
+while (n <= 10)
+{
+    WriteLine(n + ":1,2,3,4,5,6,7,8,9,10");
+    n++;
+}
+ReadKey();
+
+
+//20
+using static System.Console;
+
+int n1, n2, mudar = 0;
+
+WriteLine("Digite um número para x");
+n1 = Convert.ToInt32(Console.ReadLine());
+WriteLine("Digite um número para y");
+n2 = Convert.ToInt32(Console.ReadLine());
+
+WriteLine("Valor digitado para x:{0}, e para y:{1}", n1, n2);
+mudar = n2;
+n2 = n1;
+n1 = mudar;
+WriteLine("Agora o valor de x é:{0}, e o valor de é:{1}", n1, n2);
+
+ReadKey();

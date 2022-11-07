@@ -1,0 +1,21 @@
+QUAL O MAIOR?
+
+int n1, n2;
+Console.WriteLine("Digite um número:");
+n1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Digite mais um número:");
+n2 = Convert.ToInt32(Console.ReadLine());
+if (n1 > n2)
+{
+    Console.WriteLine($"é maior é o: {n1} e menor é o: {n2}");
+}
+else if (n1 == n2)
+{
+    Console.WriteLine("os números são iguais!");
+}
+else
+{
+    Console.WriteLine
+ ($"é maior é o: {n2} e menor é o: {n1}");
+}
+
